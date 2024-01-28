@@ -35,7 +35,7 @@ const FileUpload = ({ setdata }: props) => {
     if (!file) {
       alert("Uploading file:");
     }
-    Papa.parse(file, {
+    Papa.parse(file!, {
       header: true,
       complete: (result: any) => {
         setdata(result.data);
