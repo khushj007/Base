@@ -50,7 +50,7 @@ export default function Home() {
             <p>Password</p>
             <input type="password" />
             <p>Forgot password ?</p>
-            <Link href={"/dashboard"}>Sign In</Link>
+            <Link href={"/upload"}>Sign In</Link>
             <p className={styles.register}>
               Don&apos;t have account ?{" "}
               <span style={{ color: "#605bff", cursor: "pointer" }}>
