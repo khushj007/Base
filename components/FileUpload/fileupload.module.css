@@ -1,0 +1,33 @@
+.fileupload {
+  width: 90%;
+  height: 80%;
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.fileupload input {
+  display: none;
+}
+
+.uploadbutton {
+  width: 90%;
+  height: 50px;
+  background-color: #605bff;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.remove {
+  margin-top: 15px;
+  color: #d33030;
+  cursor: pointer;
+}

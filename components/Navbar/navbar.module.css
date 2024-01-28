@@ -1,0 +1,35 @@
+.navbar {
+  position: absolute;
+  width: 100%;
+  display: none;
+  background-color: white;
+  height: 90px;
+  padding: 0.5em 1em;
+}
+
+.nleft,
+.nright {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+}
+
+.nleft > h1 {
+  font-weight: 500;
+}
+
+.icon,
+.nright > img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
