@@ -10,10 +10,17 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import Profile from "@/public/profile.jpeg";
 import Image from "next/image";
 import MobileSidebar from "@/components/MobileSideBar/MobileSidebar";
+import { useRouter } from "next/navigation";
 
 const Pages = () => {
   const [data, setData] = useState<Record<string, any>[] | null>(null);
-  const { value, setValue }: any = usemyContext();
+  const { value, setValue, pvalue, setPvalue }: any = usemyContext();
+  const router = useRouter();
+
+  function Logout() {
+    setPvalue(false);
+    router.push("/");
+  }
 
   return (
     <div className={styles.main}>
@@ -25,7 +32,24 @@ const Pages = () => {
           <h1>Upload CSV</h1>
           <div className={styles.rnav}>
             <NotificationsNoneOutlinedIcon className={styles.icon} />
-            <Image src={Profile} alt="bell.png" />
+            <div className={styles.profileinfo}>
+              <Image
+                onClick={() => {
+                  setPvalue(!pvalue);
+                }}
+                src={Profile}
+                alt="proifile.png"
+              />
+              <div
+                style={{ display: pvalue ? "flex" : "none" }}
+                className={styles.extrainfo}
+              >
+                <p onClick={Logout}>Logout</p>
+                <p>option1</p>
+                <p>option2</p>
+                <p>option3</p>
+              </div>
+            </div>
           </div>
         </div>
         <div className={styles.content}>

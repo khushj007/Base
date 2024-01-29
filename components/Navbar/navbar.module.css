@@ -4,7 +4,7 @@
   display: none;
   background-color: white;
   height: 90px;
-  padding: 0.5em 1em;
+  padding: 0.5em 2em;
 }
 
 .nleft,
@@ -20,10 +20,39 @@
 }
 
 .icon,
-.nright > img {
+.profileinfo > img {
   height: 35px;
   width: 35px;
   border-radius: 50%;
+}
+
+.profileinfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.extrainfo {
+  position: absolute;
+  border: 1px solid gray;
+  top: 40px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.extrainfo > p {
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.extrainfo > p:hover {
+  background-color: #e0e0e0;
 }
 
 @media (max-width: 640px) {

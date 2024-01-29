@@ -5,12 +5,10 @@ import Github from "@/public/github.svg";
 import Linkdin from "@/public/linkedin.svg";
 import Discord from "@/public/discord.svg";
 import Twitter from "@/public/twitter.svg";
-
 import Githubm from "@/public/mgithub.svg";
 import Linkdinm from "@/public/mlinkdin.svg";
 import Discordm from "@/public/mdiscord.svg";
 import Twitterm from "@/public/mtwitter.svg";
-import Link from "next/link";
 import AppleIcon from "@mui/icons-material/Apple";
 import Google from "@/public/google.png";
 import { ChangeEvent, useState } from "react";

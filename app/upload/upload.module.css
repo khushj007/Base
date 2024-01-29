@@ -48,6 +48,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 1em;
 }
 
 .icon {
@@ -61,8 +62,37 @@
   height: 35px;
   cursor: pointer;
 }
-.rnav img:nth-child(2) {
+
+.profileinfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profileinfo > img {
   border-radius: 50%;
+}
+
+.extrainfo {
+  position: absolute;
+  border: 1px solid gray;
+  top: 40px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.extrainfo > p {
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.extrainfo > p:hover {
+  background-color: #e0e0e0;
 }
 
 @media (max-width: 640px) {
