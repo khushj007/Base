@@ -29,7 +29,8 @@
   margin-bottom: 30px;
   gap: 10px;
 }
-.links img {
+.links img,
+.mobilelinks img {
   height: 40px;
   width: 40px;
   background-color: white;
@@ -130,6 +131,19 @@
   height: 17px;
 }
 
+.mobilelinks {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobilelinks img:nth-child(1),
+.mobilelinks img:nth-child(2) {
+  border-radius: 50%;
+}
+
 /* media queries */
 @media (max-width: 640px) {
   .logo {
@@ -148,6 +162,10 @@
   .right {
     justify-content: start;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .mobilelinks {
+    display: flex;
   }
 
   .navbar {

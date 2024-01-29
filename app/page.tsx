@@ -5,6 +5,11 @@ import Github from "@/public/github.svg";
 import Linkdin from "@/public/linkedin.svg";
 import Discord from "@/public/discord.svg";
 import Twitter from "@/public/twitter.svg";
+
+import Githubm from "@/public/mgithub.svg";
+import Linkdinm from "@/public/mlinkdin.svg";
+import Discordm from "@/public/mdiscord.svg";
+import Twitterm from "@/public/mtwitter.svg";
 import Link from "next/link";
 import AppleIcon from "@mui/icons-material/Apple";
 import Google from "@/public/google.png";
@@ -104,6 +109,12 @@ export default function Home() {
                 Register here
               </span>
             </p>
+            <div className={styles.mobilelinks}>
+              <Image src={Githubm} alt="github.svg" />{" "}
+              <Image src={Twitterm} alt="twitter.svg" />{" "}
+              <Image src={Linkdinm} alt="linkdin.svg" />{" "}
+              <Image src={Discordm} alt="discord.svg" />{" "}
+            </div>
           </div>
         </div>
       </div>
