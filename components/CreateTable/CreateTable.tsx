@@ -1,6 +1,7 @@
 import { useState, ChangeEvent } from "react";
 import styles from "./createtable.module.css";
 import Link from "next/link";
+import Popover from "../Popover/Popover";
 
 interface props {
   data: Record<string, any>[] | null;
@@ -10,20 +11,19 @@ const CreateTable = ({ data, heading }: props) => {
   const [selectedTags, setSelectedTags] = useState<Record<number, string[]>>(
     {}
   );
-  const handleSelectChange = (rowIndex: number, e: ChangeEvent<any>) => {
-    const newValue = e.target.value;
+  const handleSelectChange = (rowIndex: number, value: string) => {
+    const newValue = value;
 
     setSelectedTags((prev: Record<number, string[]>) => {
       return {
         ...prev,
         [rowIndex]: prev[rowIndex]
-          ? Array.from(new Set([...prev[rowIndex], e.target.value]))
-          : [e.target.value],
+          ? Array.from(new Set([...prev[rowIndex], newValue]))
+          : [newValue],
       };
     });
   };
   function deleteTag(e: any, row: number) {
-    console.log(e.target.id, row);
     setSelectedTags((prev: Record<number, string[]>) => {
       return {
         ...prev,
@@ -62,20 +62,11 @@ const CreateTable = ({ data, heading }: props) => {
               {/* //select tags */}
               <td className={styles.td}>
                 {" "}
-                <select
-                  value="tags"
-                  onChange={(e) => {
-                    handleSelectChange(i + 1, e);
-                  }}
-                >
-                  {row["select tags"]?.split(",").map((data: string) => {
-                    return (
-                      <option key={data} value={data}>
-                        {data}
-                      </option>
-                    );
-                  })}
-                </select>
+                <Popover
+                  data={row["select tags"]?.split(",")}
+                  handelChange={handleSelectChange}
+                  index={i}
+                />
               </td>
               {/* //selected tags */}
               <td className={styles.std}>

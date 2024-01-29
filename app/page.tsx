@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Github from "@/public/github.svg";
@@ -5,11 +6,52 @@ import Linkdin from "@/public/linkedin.svg";
 import Discord from "@/public/discord.svg";
 import Twitter from "@/public/twitter.svg";
 import Link from "next/link";
-import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
 import Google from "@/public/google.png";
+import { ChangeEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const [details, setDetails] = useState<Record<string, string>>({
+    email: "",
+    password: "",
+  });
+  const router = useRouter();
+
+  function handelUser() {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!details.email) {
+      alert("please provide Email since it is prototype you can provide any");
+      return;
+    }
+    if (!emailRegex.test(details.email)) {
+      alert("provide valid email address");
+      return;
+    }
+    if (!details.password) {
+      alert(
+        "please provide password since it is prototype you can provide any"
+      );
+      return;
+    }
+
+    router.push("/upload");
+  }
+  function handelRegister() {
+    alert(
+      "since its a prototype you can provide any combination of email and password"
+    );
+  }
+
+  function handelChange(e: ChangeEvent<HTMLInputElement>) {
+    setDetails((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value,
+      };
+    });
+  }
+
   return (
     <main>
       <div className={styles.left}>
@@ -46,14 +88,19 @@ export default function Home() {
           </div>
           <div className={styles.content}>
             <p>Email address</p>
-            <input type="text" />
+            <input name="email" onChange={handelChange} type="email" />
             <p>Password</p>
-            <input type="password" />
+            <input name="password" onChange={handelChange} type="password" />
             <p>Forgot password ?</p>
-            <Link href={"/upload"}>Sign In</Link>
+            <button className={styles.signin} onClick={handelUser}>
+              Sign In
+            </button>
             <p className={styles.register}>
               Don&apos;t have account ?{" "}
-              <span style={{ color: "#605bff", cursor: "pointer" }}>
+              <span
+                onClick={handelRegister}
+                style={{ color: "#605bff", cursor: "pointer" }}
+              >
                 Register here
               </span>
             </p>

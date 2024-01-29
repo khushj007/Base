@@ -26,6 +26,11 @@
   cursor: pointer;
 }
 
+.excel {
+  width: 60px;
+  height: 45px;
+}
+
 .remove {
   margin-top: 15px;
   color: #d33030;

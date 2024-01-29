@@ -15,9 +15,6 @@ const Pages = () => {
   const [data, setData] = useState<Record<string, any>[] | null>(null);
   const { value, setValue }: any = usemyContext();
 
-  function handelClick() {
-    console.log("clicked");
-  }
   return (
     <div className={styles.main}>
       <MobileSidebar value={value} />

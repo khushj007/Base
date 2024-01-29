@@ -103,7 +103,7 @@
   border: none;
 }
 
-.content > a {
+.signin {
   width: 95%;
   padding: 1em;
   border-radius: 10px;
